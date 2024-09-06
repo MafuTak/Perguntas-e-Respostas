@@ -13,6 +13,7 @@ def quiz():
 
     while pontos < max_acertos:
         pergunta_atual = random.choice(perguntas)
+        perguntas.remove(pergunta_atual)
 
         print(pergunta_atual["pergunta"])
 
@@ -31,5 +32,8 @@ def quiz():
         else:
             print("Resposta errada! Fim de jogo.")
             break
+
+    if len(perguntas) == 0:
+        print("Obrigado por jogar!")
 
 quiz()
